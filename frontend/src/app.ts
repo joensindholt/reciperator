@@ -3,11 +3,13 @@
 module app {
     'use strict';
 
-    angular.module('app', []);
-        // .config([], Config)
-        // .run([], Run);
+    angular.module('app', [
+        'ngRoute'
+    ])
+        .config(['$stateProvider', Config])
+        .run([Run]);
 
-    function Config(): void {
+    function Config($stateProvider: angular.ui.IStateProvider): void {
 
     }
 
