@@ -1,0 +1,19 @@
+{
+  "name": "goteamup-frontend",
+  "version": "1.0.0",
+  "description": "Frontend for the GoTeamUp project",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joensindholt/goteamup.git/frontend"
+  },
+  "author": "Joen Sindholt",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-typescript": "^2.10.0"
+  }
+}
