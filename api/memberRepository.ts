@@ -7,7 +7,8 @@ export class MemberRepository implements Repository.Repository<Model.Member> {
     constructor() {
         this.id = 1;
         this.members = {
-            0: {id: 0, name: 'George', phone: '54627754'}
+            0: {id: 0, name: 'George', phone: '54627754'},
+            1: {id: 1, name: 'Gustav', phone: '65447752'}
         };
     }
 

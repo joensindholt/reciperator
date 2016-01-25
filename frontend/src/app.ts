@@ -8,7 +8,8 @@ module app {
         'ui.router',
         'ngAnimate',
         'ngMaterial',
-        'Views'
+        'Views',
+        'Services'
     ])
         .config(['$stateProvider', Config])
         .run([Run]);

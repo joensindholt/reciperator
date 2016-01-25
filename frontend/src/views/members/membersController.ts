@@ -3,13 +3,15 @@
 module Views {
 
     export class MembersController {
+
         members: Array<any>
 
-        constructor() {
-            this.members = [{
-                id: 1,
-                name: 'George'
-            }];
+        static $inject = ['MembersService'];
+
+        constructor(private membersService: Services.MembersService) {
+            this.membersService.getAll().then((members) => {
+                this.members = members;
+            });
         }
     }
 }
