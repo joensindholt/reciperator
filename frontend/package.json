@@ -28,5 +28,8 @@
     "lodash": "^4.0.0",
     "path": "^0.12.7",
     "yargs": "^3.32.0"
+  },
+  "dependencies": {
+    "gulp-cssmin": "^0.1.7"
   }
 }

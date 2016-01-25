@@ -32,9 +32,13 @@ module.exports = {
         script:[
             globalPath.bower+'angular/angular.js',
             globalPath.bower+'angular-route/angular-route.js',
-            globalPath.bower+'angular-ui-router/release/angular-ui-router.js'
+            globalPath.bower+'angular-ui-router/release/angular-ui-router.js',
+            globalPath.bower+'angular-aria/angular-aria.js',
+            globalPath.bower+'angular-animate/angular-animate.js',
+            globalPath.bower+'angular-material/angular-material.js'
         ],
         css:[
+            globalPath.bower+'angular-material/angular-material.css'
         ],
         fonts: [
         ],

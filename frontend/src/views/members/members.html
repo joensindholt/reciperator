@@ -1,0 +1,11 @@
+<h1>Members</h1>
+
+<md-list-item ng-repeat="member in vm.members">
+    <button class="md-no-style md-button md-ink-ripple" type="button" ng-click="vm.openMember(member.id, $event)" aria-label="{{member.name}}">
+        <div class="md-list-item-inner ng-scope">
+            <p class="ng-binding">{{member.name}}</p>
+        </div>
+        <div class="md-ripple-container">
+        </div>
+    </button>
+</md-list-item>
