@@ -3,6 +3,11 @@
 import express = require('express');
 import bodyParser = require('body-parser');
 import MemberRepository = require('./memberRepository');
+// New Code
+var mongo = require('mongodb');
+var monk = require('monk');
+
+var db = monk('localhost:27017/goteamup');
 
 var app = express();
 
@@ -10,19 +15,27 @@ var app = express();
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
-app.use(function(req, res, next) {
+app.use(function(req:any, res:any, next:any) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
 
+// Make our db accessible to our router
+app.use(function(req:any, res:any, next:any){
+    req.db = db;
+    next();
+});
+
 var port:number = process.env.PORT || 8888;
 var router = express.Router();
 
-var memberRepository = new MemberRepository.MemberRepository();
+var memberRepository = new MemberRepository.MemberRepository(db);
 
 router.get('/members', function(req, res) {
-    res.json(memberRepository.getAll());
+    memberRepository.getAll().then((members) => {
+        res.json(members);
+    });
 });
 
 router.get('/members/:id', function(req, res) {

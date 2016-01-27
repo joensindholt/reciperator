@@ -1,10 +1,11 @@
+/// <reference path="typings/tsd.d.ts" />
 /// <reference path="repository.ts" />
 
 export class MemberRepository implements Repository.Repository<Model.Member> {
     private id: number;
     private members: {[id:number]:Model.Member; };
 
-    constructor() {
+    constructor(private db:any) {
         this.id = 1;
         this.members = {
             0: {id: 0, name: 'George', phone: '54627754'},
@@ -12,10 +13,18 @@ export class MemberRepository implements Repository.Repository<Model.Member> {
         };
     }
 
-    getAll(): any {
-        var obj = this.members;
-        var arr = Object.keys(obj).map(function (key) { return obj[key]; });
-        return arr;
+    getAll(): Promise<Array<Model.Member>> {
+        var promise = new Promise((resolve, reject) => {
+            console.log('getting membercollection');
+            var collection = this.db.get('membercollection');
+            console.log('finding members');
+            collection.find({}, {}, (e, members) => {
+                console.log('returning members');
+                resolve(members);
+            });
+        });
+
+        return promise;
     }
 
     create(user:Model.Member) {

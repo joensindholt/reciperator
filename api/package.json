@@ -17,6 +17,9 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.14.2",
-    "express": "^4.13.4"
+    "express": "^4.13.4",
+    "kerberos": "0.0.18",
+    "mongodb": "^1.4.4",
+    "monk": "^1.0.1"
   }
 }
