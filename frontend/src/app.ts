@@ -15,13 +15,19 @@ module app {
         .run([Run]);
 
     function Config($stateProvider: angular.ui.IStateProvider): void {
-        $stateProvider.
-            state('members', {
-            url: "/members",
-            templateUrl: "partials/views/members/members.html",
-            controller: 'MembersController',
-            controllerAs: 'vm'
-        });
+        $stateProvider
+            .state('members', {
+                url: "/members",
+                templateUrl: "partials/views/members/members.html",
+                controller: 'MembersController',
+                controllerAs: 'vm'
+            })
+            .state('addmember', {
+                url: "/addmember",
+                templateUrl: "partials/views/members/addmember.html",
+                controller: 'AddMemberController',
+                controllerAs: 'vm'
+            });
     }
 
     function Run(): void {

@@ -27,11 +27,18 @@ export class MemberRepository implements Repository.Repository<Model.Member> {
         return promise;
     }
 
-    create(user:Model.Member) {
-        user.id = this.id;
-        this.id++;
-        this.members[user.id] = user;
-        return user;
+    create(member:Model.Member) {
+        var promise = new Promise((resolve, reject) => {
+            console.log('getting membercollection');
+            var collection = this.db.get('membercollection');
+            console.log('finding members');
+            collection.insert(member, function (err, doc) {
+              if (err) throw err;
+              resolve(doc);
+            });
+        });
+
+        return promise;
     }
 
     read(id:number) {

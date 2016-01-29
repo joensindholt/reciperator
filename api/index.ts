@@ -38,6 +38,12 @@ router.get('/members', function(req, res) {
     });
 });
 
+router.post('/members', function(req, res) {
+    memberRepository.create(req.body).then((member) => {
+        res.json(member);
+    });
+});
+
 router.get('/members/:id', function(req, res) {
     res.json(memberRepository.read(req.params.id));
 });

@@ -11,7 +11,7 @@ module Services {
 
         }
 
-        getAll = (): ng.IPromise<Array<any>> => {
+        getAll(): ng.IPromise<Array<any>> {
             var defered = this.$q.defer();
 
             this.$http.get('http://127.0.0.1:8888/api/members').then((result => {
@@ -22,6 +22,10 @@ module Services {
             });
 
             return defered.promise;
+        }
+
+        add(player: any): ng.IPromise<any> {
+            return this.$http.post('http://127.0.0.1:8888/api/members', player);
         }
     }
 }
