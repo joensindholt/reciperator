@@ -11,21 +11,54 @@ module Services {
 
         }
 
-        getAll(): ng.IPromise<Array<any>> {
+        getAll(): ng.IPromise<Array<Model.Member>> {
             var defered = this.$q.defer();
 
             this.$http.get('http://127.0.0.1:8888/api/members').then((result => {
-                console.log('got members from server', result.data);
                 defered.resolve(result.data);
-            })).catch((err) => {
-                console.error('Error getting members: %s', err);
-            });
+            }));
 
             return defered.promise;
         }
 
-        add(player: any): ng.IPromise<any> {
-            return this.$http.post('http://127.0.0.1:8888/api/members', player);
+        get(memberId: string): ng.IPromise<Model.Member> {
+            var defered = this.$q.defer();
+
+            this.$http.get('http://127.0.0.1:8888/api/members/' + memberId).then((result => {
+                defered.resolve(result.data);
+            }));
+
+            return defered.promise;
+        }
+
+        add(member: Model.Member): ng.IPromise<Model.Member> {
+            var defered = this.$q.defer();
+
+            this.$http.post('http://127.0.0.1:8888/api/members', member).then((result => {
+                defered.resolve(result.data);
+            }));
+
+            return defered.promise;
+        }
+
+        update(member: Model.Member): ng.IPromise<Model.Member> {
+            var defered = this.$q.defer();
+
+            this.$http.put('http://127.0.0.1:8888/api/members/' + member._id, member).then((result => {
+                defered.resolve(result.data);
+            }));
+
+            return defered.promise;
+        }
+
+        delete(member: Model.Member): ng.IPromise<{}> {
+            var defered = this.$q.defer();
+
+            this.$http.delete('http://127.0.0.1:8888/api/members/' + member._id).then((result => {
+                defered.resolve();
+            }));
+
+            return defered.promise;
         }
     }
 }

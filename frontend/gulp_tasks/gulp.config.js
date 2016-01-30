@@ -35,7 +35,8 @@ module.exports = {
             globalPath.bower+'angular-ui-router/release/angular-ui-router.js',
             globalPath.bower+'angular-aria/angular-aria.js',
             globalPath.bower+'angular-animate/angular-animate.js',
-            globalPath.bower+'angular-material/angular-material.js'
+            globalPath.bower+'angular-material/angular-material.js',
+            globalPath.bower+'lodash/dist/lodash.min.js'
         ],
         css:[
             globalPath.bower+'angular-material/angular-material.css'

@@ -4,22 +4,20 @@ module Views {
 
     export class AddMemberController {
 
-        master: any;
+        member: Model.Member;
         form: ng.IFormController;
 
-        static $inject = ['MembersService'];
+        static $inject = ['$state', 'MembersService'];
 
-        constructor(private membersService: Services.MembersService) {
+        constructor(
+            private $state: angular.ui.IStateService,
+            private membersService: Services.MembersService) {
         }
 
-        addPlayer(player: any) {
-            this.master = angular.copy(player);
-            console.log(this.master);
-
-            if (this.form.$valid) {
-                console.log('adding player');
-                this.membersService.add(player);
-            }
+        addMember() {
+            this.membersService.add(this.member).then(() => {
+                this.$state.go('members');
+            });
         }
     }
 }

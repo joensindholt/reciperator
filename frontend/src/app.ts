@@ -4,15 +4,18 @@ module app {
     'use strict';
 
     angular.module('app', [
+        // External modules
         'ngRoute',
         'ui.router',
         'ngAnimate',
         'ngMaterial',
-        'Views',
-        'Services'
+        // App modules
+        'Directives',
+        'Services',
+        'Views'
     ])
-        .config(['$stateProvider', Config])
-        .run([Run]);
+    .config(['$stateProvider', Config])
+    .run([Run]);
 
     function Config($stateProvider: angular.ui.IStateProvider): void {
         $stateProvider
@@ -26,6 +29,15 @@ module app {
                 url: "/addmember",
                 templateUrl: "partials/views/members/addmember.html",
                 controller: 'AddMemberController',
+                controllerAs: 'vm'
+            })
+            .state('editmember', {
+                url: "/editmember/:id",
+                params: {
+                    id: { value: null }
+                },
+                templateUrl: "partials/views/members/editmember.html",
+                controller: 'EditMemberController',
                 controllerAs: 'vm'
             });
     }
