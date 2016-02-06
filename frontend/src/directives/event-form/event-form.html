@@ -1,0 +1,12 @@
+<form novalidate name="vm.form">
+    <div layout-gt-xs="row">
+        <md-input-container class="md-block" flex-gt-xs>
+            <label>Titel</label>
+            <input ng-model="vm.event.title" required>
+            <div ng-messages="form.name.$error" role="alert" multiple>
+                <div ng-message="required" class="my-message">Du glemte vist at indtaste en titel til kampen?</div>
+            </div>
+        </md-input-container>
+    </div>
+    <input type="submit" ng-click="vm.handleSubmit(vm.event)" value="{{vm.submitText}}" />
+</form>

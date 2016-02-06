@@ -28,7 +28,7 @@ module app {
             })
             .state('addmember', {
                 url: "/addmember",
-                templateUrl: "partials/views/members/addmember.html",
+                templateUrl: "partials/views/members/add.member.html",
                 controller: 'AddMemberController',
                 controllerAs: 'vm'
             })
@@ -37,8 +37,29 @@ module app {
                 params: {
                     id: { value: null }
                 },
-                templateUrl: "partials/views/members/editmember.html",
+                templateUrl: "partials/views/members/edit.member.html",
                 controller: 'EditMemberController',
+                controllerAs: 'vm'
+            })
+            .state('events', {
+                url: "/events",
+                templateUrl: "partials/views/events/events.html",
+                controller: 'EventsController',
+                controllerAs: 'vm'
+            })
+            .state('addevent', {
+                url: "/addevent",
+                templateUrl: "partials/views/events/add.event.html",
+                controller: 'AddEventController',
+                controllerAs: 'vm'
+            })
+            .state('editevent', {
+                url: "/editevent/:id",
+                params: {
+                    id: { value: null }
+                },
+                templateUrl: "partials/views/events/edit.event.html",
+                controller: 'EditEventController',
                 controllerAs: 'vm'
             });
     }
