@@ -2,7 +2,10 @@
 
 import express = require('express');
 import bodyParser = require('body-parser');
-import MemberRepository = require('./memberRepository');
+
+import MemberRoutes = require('./routes/member.routes');
+import EventRoutes = require('./routes/event.routes');
+
 // New Code
 var mongo = require('mongodb');
 var monk = require('monk');
@@ -31,42 +34,9 @@ app.use(function(req:any, res:any, next:any){
 var port:number = process.env.PORT || 8888;
 var router = express.Router();
 
-var memberRepository = new MemberRepository.MemberRepository(db);
-
-router.get('/members', function(req, res) {
-    memberRepository.getAll().then((members) => {
-        res.json(members);
-    });
-});
-
-router.get('/members/:id', function(req, res) {
-    memberRepository.read(req.params.id).then((member) => {
-        res.json(member);
-    });
-});
-
-router.post('/members', function(req, res) {
-    memberRepository.create(req.body).then((member) => {
-        res.json(member);
-    });
-});
-
-router.put('/members/:id', function(req, res) {
-    var member: Model.Member = req.body;
-    if (req.params.id !== member._id) {
-        res.status(400).send('Member ids do not match');
-    } else {
-        memberRepository.update(req.body).then((member) => {
-            res.json(member);
-        });
-    }
-});
-
-router.delete('/members/:id', function(req, res) {
-    memberRepository.delete(req.params.id).then(() => {
-        res.sendStatus(200);
-    });
-});
+// Init routes
+new MemberRoutes.MemberRoutes(db, router);
+new EventRoutes.EventRoutes(db, router);
 
 // prefixed all routes with /api
 var prefix = '/api';

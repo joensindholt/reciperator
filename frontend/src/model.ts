@@ -12,4 +12,10 @@ module Model {
         postalCode: string,
         city: string
     }
+
+    export interface Event extends Identifiable {
+        title: string,
+        eventDate: any,
+        meetingDate: any
+    }
 }
