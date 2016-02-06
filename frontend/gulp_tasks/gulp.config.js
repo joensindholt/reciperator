@@ -10,7 +10,7 @@ module.exports = {
             globalPath.app+"index.html"
         ],
         sass:[
-            globalPath.app+'sass/**/*.scss'
+            globalPath.app+'**/*.scss'
         ],
         partials: [
             globalPath.app+"**/*.html"
@@ -36,6 +36,7 @@ module.exports = {
             globalPath.bower+'angular-aria/angular-aria.js',
             globalPath.bower+'angular-animate/angular-animate.js',
             globalPath.bower+'angular-material/angular-material.js',
+            globalPath.bower+'angular-media-queries/match-media.js',
             globalPath.bower+'lodash/dist/lodash.min.js'
         ],
         css:[

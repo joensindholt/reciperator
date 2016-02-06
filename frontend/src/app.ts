@@ -9,6 +9,7 @@ module app {
         'ui.router',
         'ngAnimate',
         'ngMaterial',
+        'matchMedia',
         // App modules
         'Directives',
         'Services',
