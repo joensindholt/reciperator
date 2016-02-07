@@ -20,6 +20,12 @@ module app {
 
     function Config($stateProvider: angular.ui.IStateProvider): void {
         $stateProvider
+            .state('home', {
+                url: "",
+                templateUrl: "partials/views/home/home.html",
+                controller: 'HomeController',
+                controllerAs: 'vm'
+            })
             .state('members', {
                 url: "/members",
                 templateUrl: "partials/views/members/members.html",
@@ -60,6 +66,27 @@ module app {
                 },
                 templateUrl: "partials/views/events/edit.event.html",
                 controller: 'EditEventController',
+                controllerAs: 'vm'
+            })
+            .state('tasks', {
+                url: "/tasks",
+                templateUrl: "partials/views/tasks/tasks.html",
+                controller: 'TasksController',
+                controllerAs: 'vm'
+            })
+            .state('addtask', {
+                url: "/addtask",
+                templateUrl: "partials/views/tasks/add.task.html",
+                controller: 'AddTaskController',
+                controllerAs: 'vm'
+            })
+            .state('edittask', {
+                url: "/edittask/:id",
+                params: {
+                    id: { value: null }
+                },
+                templateUrl: "partials/views/tasks/edit.task.html",
+                controller: 'EditTaskController',
                 controllerAs: 'vm'
             });
     }

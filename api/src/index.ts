@@ -5,6 +5,7 @@ import bodyParser = require('body-parser');
 
 import MemberRoutes = require('./routes/member.routes');
 import EventRoutes = require('./routes/event.routes');
+import TaskRoutes = require('./routes/task.routes');
 
 // New Code
 var mongo = require('mongodb');
@@ -37,6 +38,7 @@ var router = express.Router();
 // Init routes
 new MemberRoutes.MemberRoutes(db, router);
 new EventRoutes.EventRoutes(db, router);
+new TaskRoutes.TaskRoutes(db, router);
 
 // prefixed all routes with /api
 var prefix = '/api';

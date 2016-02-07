@@ -15,7 +15,15 @@ module Model {
 
     export interface Event extends Identifiable {
         title: string,
-        eventDate: any,
+        descripton: string,
+        date: any,
+        endDate: any,
+        location: string,
+        meetingLocation: string,
         meetingDate: any
+    }
+
+    export interface Task extends Identifiable {
+        title: string
     }
 }

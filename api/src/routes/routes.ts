@@ -5,8 +5,12 @@ export class Routes {
 
     constructor(router: any, private resourceName: string, private repository: any) {
 
+        console.log('Routes: setting up routes for resource %s using repository collection %s', this.resourceName, this.repository.collection);
+
         router.get('/' + resourceName, (req, res) => {
+            console.log('Get all requested for resource %s using repository %s', resourceName, this.repository.collection);
             this.repository.getAll().then((resources) => {
+                console.log('Found resources', resources);
                 res.json(resources);
             });
         });

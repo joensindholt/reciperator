@@ -12,6 +12,7 @@ module Views {
             private $state: angular.ui.IStateService,
             private $mdDialog: ng.material.IDialogService,
             private membersService: Services.MembersService) {
+                console.debug('MembersCtrl: Getting members from members service');
                 this.membersService.getAll().then((members) => {
                     this.members = members;
                 });

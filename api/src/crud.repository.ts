@@ -4,7 +4,7 @@
 import Repository = require('./repository');
 
 export class CrudRepository<T extends Model.Identifiable> implements Repository.Repository<T> {
-    constructor(private db: any, private collection: string) {
+    constructor(private db: any, public collection: string) {
 
     }
 

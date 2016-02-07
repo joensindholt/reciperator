@@ -22,4 +22,8 @@ module Model {
         meetingLocation: string,
         meetingDate: any
     }
+
+    export interface Task extends Identifiable {
+        title: string
+    }
 }
