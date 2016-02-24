@@ -7,6 +7,9 @@ module Directives {
         form: ng.IFormController;
         submit: () => void;
 
+        event: Model.Event;
+        members: Array<Model.Member>;
+
         static $inject = ['$scope'];
         constructor(private $scope: ng.IScope){
         }
@@ -16,6 +19,11 @@ module Directives {
                 this.submit();
             }
         }
+
+        addTask() {
+            this.event.tasks = this.event.tasks || <any>[];
+            this.event.tasks.push(<any>{});
+        }
     }
 
     export function eventForm() {
@@ -23,6 +31,7 @@ module Directives {
         return {
             scope: {
                 event: '=',
+                members: '=',
                 submit: '&',
                 submitText: '@'
             },

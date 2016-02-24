@@ -20,7 +20,13 @@ module Model {
         endDate: any,
         location: string,
         meetingLocation: string,
-        meetingDate: any
+        meetingDate: any,
+        tasks: [{
+            memberId: string,
+            memberName: string,
+            taskId: string,
+            taskTitle: string
+        }]
     }
 
     export interface Task extends Identifiable {

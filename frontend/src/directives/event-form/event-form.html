@@ -8,5 +8,25 @@
             </div>
         </md-input-container>
     </div>
+    <div>
+        <h2>Opgaver</h2>
+        <div ng-repeat="task in vm.event.tasks">
+            <ng-form>
+                <div layout-gt-xs="row" flex>
+                    <md-input-container class="md-block" flex>
+                        <label>Spiller</label>
+                        <md-select ng-model="task.memberId">
+                          <md-option ng-repeat="member in vm.members" value="{{member._id}}">{{member.name}}</md-option>
+                        </md-select>
+                    </md-input-container>
+                    <md-input-container class="md-block" flex>
+                        <label>Opgave</label>
+                        <input ng-model="task.taskTitle">
+                    </md-input-container>
+                </div>
+            </ng-form>
+        </div>
+        <button ng-click="vm.addTask()">Tilføj opgave</button>
+    </div>
     <input type="submit" ng-click="vm.handleSubmit(vm.event)" value="{{vm.submitText}}" />
 </form>

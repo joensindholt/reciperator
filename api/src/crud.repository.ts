@@ -8,7 +8,7 @@ export class CrudRepository<T extends Model.Identifiable> implements Repository.
 
     }
 
-    getAll = (): Promise<Array<T>> => {
+    public getAll(): Promise<Array<T>> {
         var promise = new Promise((resolve, reject) => {
             var collection = this.db.get(this.collection);
             collection.find({}, {}, (e, resources) => {
@@ -19,7 +19,7 @@ export class CrudRepository<T extends Model.Identifiable> implements Repository.
         return promise;
     }
 
-    create = (resource: T) => {
+    public create(resource: T) {
         var promise = new Promise((resolve, reject) => {
             var collection = this.db.get(this.collection);
             collection.insert(resource, function(err, doc) {
@@ -31,7 +31,7 @@ export class CrudRepository<T extends Model.Identifiable> implements Repository.
         return promise;
     }
 
-    read = (id: number): Promise<T> => {
+    public read(id: number): Promise<T> {
         var promise = new Promise((resolve, reject) => {
             var collection = this.db.get(this.collection);
             collection.findById(id, function(err, doc) {
@@ -43,7 +43,7 @@ export class CrudRepository<T extends Model.Identifiable> implements Repository.
         return promise;
     }
 
-    update = (resource: T) => {
+    public update(resource: T) {
         var promise = new Promise((resolve, reject) => {
             var collection = this.db.get(this.collection);
             collection.update({ _id: resource._id }, resource, function(err, doc) {
@@ -55,7 +55,7 @@ export class CrudRepository<T extends Model.Identifiable> implements Repository.
         return promise;
     }
 
-    delete = (id: number): Promise<{}> => {
+    public delete(id: number): Promise<{}> {
         var promise = new Promise((resolve, reject) => {
             var collection = this.db.get(this.collection);
             collection.remove({ _id: id }, function(err, doc) {
