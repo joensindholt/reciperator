@@ -1,4 +1,6 @@
-# goteamup
+# App seed
+
+A seed app for new frontend apps including frontend and api
 
 ## Install
 
@@ -21,4 +23,4 @@ Start the api server by `cd api`, `npm start`
 ### Frontend
 Start the frontend by `cd src`, `gulp watch`
 
-Now open a browser and point it to `http://localhost:8000/#/members`
+Now open a browser and point it to `http://localhost:8000/`
