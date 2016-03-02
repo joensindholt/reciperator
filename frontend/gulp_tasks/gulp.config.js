@@ -10,10 +10,12 @@ module.exports = {
             globalPath.app+"index.html"
         ],
         sass:[
-            globalPath.app+'**/*.scss'
+            globalPath.app+'sass/**/*.scss'
         ],
         partials: [
-            globalPath.app+"**/*.html"
+            globalPath.app+"views/**/*.html",
+            globalPath.app+"components/**/*.html",
+            globalPath.app+"directives/**/*.html"
         ],
         img: [
             globalPath.app+"img/**/*",
@@ -34,13 +36,13 @@ module.exports = {
             globalPath.bower+'angular-route/angular-route.js',
             globalPath.bower+'angular-ui-router/release/angular-ui-router.js',
             globalPath.bower+'angular-aria/angular-aria.js',
-            globalPath.bower+'angular-animate/angular-animate.js',
-            globalPath.bower+'angular-material/angular-material.js',
             globalPath.bower+'angular-media-queries/match-media.js',
-            globalPath.bower+'lodash/dist/lodash.min.js'
+            globalPath.bower+'lodash/dist/lodash.min.js',
+            globalPath.bower+'foundation-apps/dist/js/foundation-apps.min.js',
+            globalPath.bower+'foundation-apps/dist/js/foundation-apps-templates.min.js'
         ],
         css:[
-            globalPath.bower+'angular-material/angular-material.css'
+            globalPath.bower+'foundation-apps/dist/css/foundation-apps.min.css'
         ],
         fonts: [
         ],

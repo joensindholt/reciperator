@@ -1,11 +1,11 @@
 {
-  "name": "goteamup-frontend",
-  "description": "Frontend for the GoTeamUp project",
+  "name": "app-seed",
+  "description": "App seed for angular app with node backend api",
   "authors": [
     "Joen Sindholt"
   ],
   "license": "ISC",
-  "homepage": "https://github.com/joensindholt/goteamup",
+  "homepage": "https://github.com/joensindholt/app-seed",
   "ignore": [
     "**/.*",
     "node_modules",
@@ -14,14 +14,17 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "~1.4.9",
-    "angular-route": "~1.4.9",
-    "angular-material": "~1.0.3",
-    "angular-ui-router": "~0.2.17",
-    "lodash": "~4.1.0",
-    "angular-media-queries": "~0.6.0"
+    "angular": null,
+    "angular-media-queries": null,
+    "angular-route": null,
+    "angular-ui-router": null,
+    "lodash": null,
+    "foundation-apps": "^1.2.0"
   },
   "devDependencies": {
-    "angular-mocks": "~1.4.9"
+    "angular-mocks": null
+  },
+  "resolutions": {
+    "angular": "1.5.0"
   }
 }

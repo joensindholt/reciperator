@@ -2,8 +2,6 @@ module.exports = function(){
 
     var argv = require('yargs').argv;
     var _ = require('lodash');
-    var Table = require('cli-table');
-    var table = new Table();
 
     var settings_default = require('./gulp.settings.default.json');
     var settings = {};
@@ -36,14 +34,5 @@ module.exports = function(){
         }
     });
 
-    _.forEach(settings, function(k,v) {
-        var o = {};
-        o[v] = k;
-        table.push(o);
-    });
-
-    console.log(table.toString());
-
     return settings;
-
 };

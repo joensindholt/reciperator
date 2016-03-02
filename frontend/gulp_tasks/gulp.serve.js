@@ -1,4 +1,4 @@
-module.exports = function(gulp, settings, config, connect) {
+module.exports = function(gulp, settings, config, browserSync) {
 
     // EXPRESS server with compression enabled;
     if (settings.production) {
@@ -16,13 +16,16 @@ module.exports = function(gulp, settings, config, connect) {
             return gulp.src(config.dist);
         });
     } else {
-        gulp.task('serve', 'Run a static Node.js server for development on port ' + settings.port, function() {
-            connect.server({
-                port: settings.port,
-                root: config.dist,
-                livereload: true
+        gulp.task('serve', 'Run browserSync server for development on port ' + settings.port, function() {
+            browserSync({
+                server: {
+                    baseDir: config.dist,
+                },
+                port: 8000,
+                ui: {
+                    port: 8001
+                }
             });
-            return gulp.src(config.dist);
         });
     }
 };
