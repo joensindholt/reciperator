@@ -10,24 +10,14 @@ module.exports = {
             globalPath.app+"index.html"
         ],
         sass:[
-            globalPath.app+'sass/**/*.scss'
+            globalPath.app+'sass/app.scss'
         ],
         partials: [
             globalPath.app+"views/**/*.html",
-            globalPath.app+"components/**/*.html",
-            globalPath.app+"directives/**/*.html"
+            globalPath.app+"components/**/*.html"
         ],
         img: [
             globalPath.app+"img/**/*",
-        ],
-        fonts: [
-            globalPath.app+'fonts/**/*'
-        ],
-        sprite: [
-            globalPath.app+"/sprite/**/*"
-        ],
-        tests: [
-            globalPath.app+"/**/*_test.js"
         ]
     },
     libs: {
@@ -42,11 +32,9 @@ module.exports = {
             globalPath.bower+'foundation-apps/dist/js/foundation-apps-templates.min.js'
         ],
         css:[
-            globalPath.bower+'foundation-apps/dist/css/foundation-apps.min.css'
-        ],
-        fonts: [
         ],
         sass:[
+            globalPath.bower+'foundation-apps/scss'
         ]
     },
     dist : "./dist/"

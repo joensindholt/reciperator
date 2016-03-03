@@ -9,12 +9,17 @@ module app {
         'ui.router',
         'matchMedia',
         // App modules
-        'Directives',
-        'Services',
-        'Views'
+        'Views',
+        'Components',
+        'Services'
     ])
     .config(['$stateProvider', Config])
     .run([Run]);
+
+    // Init sub modules
+    angular.module('Views', []);
+    angular.module('Components', []);
+    angular.module('Services', []);
 
     function Config($stateProvider: angular.ui.IStateProvider): void {
         $stateProvider

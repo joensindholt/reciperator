@@ -29,8 +29,10 @@
     "karma": "^0.13.21",
     "karma-chrome-launcher": "^0.2.2",
     "karma-jasmine": "^0.3.7",
+    "karma-typescript-preprocessor": "0.0.21",
     "lodash": "^4.6.0",
     "path": "^0.12.7",
+    "run-sequence": "^1.1.5",
     "yargs": "^4.2.0"
   }
 }

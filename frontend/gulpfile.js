@@ -1,4 +1,5 @@
 var gulp = require('gulp-help')(require('gulp'));
+var runSequence = require('run-sequence');
 
 var settings = require('./gulp_tasks/gulp.settings')();
 var config = require('./gulp_tasks/gulp.config');
@@ -21,8 +22,9 @@ gulp.task('default', ['ts', 'libs.script', 'libs.css', 'copy', 'partials', 'app.
     done();
 });
 
-gulp.task('watch', ['default', 'karma', 'serve'], function() {
+gulp.task('watch', function() {
+    runSequence('default','serve','karma');
     gulp.watch('src/**/*.ts', ['ts']);
     gulp.watch('src/**/*.html', ['copy', 'partials']);
-    gulp.watch(config.app.sass, ['app.css']);
+    gulp.watch('src/sass/**/*.scss', ['app.css']);
 });

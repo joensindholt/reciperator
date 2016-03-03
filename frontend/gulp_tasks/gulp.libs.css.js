@@ -5,8 +5,7 @@ var cssmin = require('gulp-cssmin');
 module.exports = function(gulp, settings, config){
 
 	gulp.task('libs.css', 'Process the css from the external libs' , function() {
-        console.log(config.libs.css);
-		return gulp.src(config.libs.css)
+        return gulp.src(config.libs.css)
 			.pipe(concat('libs.css'))
 			.pipe(gulpif(settings.production,cssmin()))
 			.pipe(gulp.dest('css/', { cwd: config.dist }));
