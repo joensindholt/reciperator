@@ -1,4 +1,27 @@
 h1, h2, h3, h4, h5, h6 {
-    letter-spacing: 4px;
     text-transform: uppercase;
+}
+
+h1 {
+    letter-spacing: 8px;
+}
+
+h2 {
+    letter-spacing: 8px;
+}
+
+h3 {
+    letter-spacing: 7px;
+}
+
+h4 {
+    letter-spacing: 7px;
+}
+
+h5 {
+    letter-spacing: 5px;
+}
+
+h6 {
+    letter-spacing: 4px;
 }
