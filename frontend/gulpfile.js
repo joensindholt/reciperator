@@ -26,5 +26,5 @@ gulp.task('watch', function() {
     runSequence('default','serve','karma');
     gulp.watch('src/**/*.ts', ['ts']);
     gulp.watch('src/**/*.html', ['copy', 'partials']);
-    gulp.watch('src/sass/**/*.scss', ['app.css']);
+    gulp.watch('src/**/*.scss', ['app.css']);
 });

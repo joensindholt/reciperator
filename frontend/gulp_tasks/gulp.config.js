@@ -29,9 +29,12 @@ module.exports = {
             globalPath.bower+'angular-media-queries/match-media.js',
             globalPath.bower+'lodash/dist/lodash.min.js',
             globalPath.bower+'foundation-apps/dist/js/foundation-apps.min.js',
-            globalPath.bower+'foundation-apps/dist/js/foundation-apps-templates.min.js'
+            globalPath.bower+'foundation-apps/dist/js/foundation-apps-templates.min.js',
+            globalPath.bower+'highlightjs/highlight.pack.min.js',
+            globalPath.bower+'angular-highlightjs/angular-highlightjs.js'
         ],
         css:[
+            globalPath.bower+'highlightjs/styles/solarized-dark.css'
         ],
         sass:[
             globalPath.bower+'foundation-apps/scss'

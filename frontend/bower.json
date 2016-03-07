@@ -19,7 +19,9 @@
     "angular-route": null,
     "angular-ui-router": null,
     "lodash": null,
-    "foundation-apps": "^1.2.0"
+    "foundation-apps": "^1.2.0",
+    "angular-highlightjs": "^0.5.1",
+    "highlightjs": "^9.2.0"
   },
   "devDependencies": {
     "angular-mocks": null

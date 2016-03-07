@@ -1,0 +1,17 @@
+.button {
+    border: 2px solid #666;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.button:hover, .button:active, .button:focus {
+    background: darken($body-background, 3%);
+    outline: none;
+}
+
+.button:focus {
+}
+
+.button:active {
+    box-shadow: inset 1px 1px 3px #999;
+}
