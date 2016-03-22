@@ -3,7 +3,7 @@
 module Services {
     'use strict';
 
-    export class CrudService<T extends Model.Identifiable> {
+    export class Api<T extends Model.Identifiable> {
 
         static $inject = ['$http', '$q'];
 

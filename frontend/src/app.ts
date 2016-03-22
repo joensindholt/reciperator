@@ -4,18 +4,20 @@ module app {
     'use strict';
 
     angular.module('app', [
-    // External modules
+        // External modules
         'ngRoute',
         'ui.router',
         'matchMedia',
         'hljs',
-    // App modules
+        'foundation.popup',
+        'foundation.actionsheet',
+        'dang-jssor',
+        // App modules
         'Views',
         'Components',
         'Services'
-    ])
-        .config(['$stateProvider', 'hljsServiceProvider', Config])
-        .run([Run]);
+    ]).config(['$stateProvider', 'hljsServiceProvider', Config])
+      .run([Run]);
 
     // Init sub modules
     angular.module('Views', []);

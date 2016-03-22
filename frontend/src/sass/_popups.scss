@@ -1,0 +1,18 @@
+.popup--menu {
+    section {
+        margin-bottom: 0;
+    }
+
+    ul {
+        margin-bottom: 0;
+    }
+
+    li {
+        padding: 0 $global-padding;
+    }
+}
+
+.block-list li.with-chevron--block-list:after {
+    right: 1.6rem;
+    top: 41%;
+}

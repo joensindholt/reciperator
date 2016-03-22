@@ -1,4 +1,19 @@
 .page-wrapper {
-    max-width: 1000px;
     margin: 0 auto;
+}
+
+.page-block {
+    padding: 40px;
+}
+
+.page-block:first-child {
+    background: #FFF;
+}
+
+.page-block:nth-child(2) {
+    background: #FFF;
+}
+
+.page-block:nth-child(3) {
+    background: #999;
 }

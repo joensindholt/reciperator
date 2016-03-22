@@ -1,0 +1,28 @@
+<!-- Basic popup -->
+<a class="button" zf-popup-toggle="popup">Open Popup</a>
+<zf-popup id="popup" class="padding">
+    This is a basic popup
+</zf-popup>
+
+<!-- menu popup -->
+<a class="button" zf-popup-toggle="menuPopup">Open Menu Popup</a>
+<zf-popup id="menuPopup" class="popup--menu" pin-to="top left" pin-at="top right">
+    <section class="block-list">
+        <ul>
+            <li><a>List item 1</a></li>
+            <li><a>List item 2</a></li>
+            <li class="with-chevron with-chevron--block-list">
+                <a zf-popup-toggle="childMenuPopup">List item 3</a>
+                <zf-popup id="childMenuPopup" class="popup--menu" pin-to="top left" pin-at="top right">
+                    <section class="block-list">
+                        <ul>
+                            <li><a>Inner list item 1</a></li>
+                            <li><a>Inner list item 2</a></li>
+                            <li><a>Inner list item 3</a></li>
+                        </ul>
+                    </section>
+                </zf-popup>
+            </li>
+        </ul>
+    </section>
+</zf-popup>

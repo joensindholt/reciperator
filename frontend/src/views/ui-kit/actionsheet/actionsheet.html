@@ -1,0 +1,20 @@
+<div zf-action-sheet="">
+    <div zf-as-button="" title="I'm an Action Sheet"></div>
+    <div zf-as-content="" position="bottom">
+        <p>Tap to share</p>
+        <ul>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Mail</a></li>
+        </ul>
+    </div>
+</div>
+
+<!-- External trigger -->
+<a class="action-sheet-container" zf-hard-toggle="separate-actionsheet">Toggle</a>
+<a zf-hide="separate-actionsheet">Hide</a>
+<zf-action-sheet id="separate-actionsheet">
+    <zf-as-content position="top">
+        <p>Message for you, sir!</p>
+    </zf-as-content>
+</zf-action-sheet>

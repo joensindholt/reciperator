@@ -4,9 +4,31 @@ module Views {
 
     export class HomeController {
 
-        static $inject = ['$state'];
+        recipes: Array<Model.Recipe>;
+        recipeIndex: number;
+        jssorOptions: any;
 
-        constructor(private $state: angular.ui.IStateService) {
+        static $inject = ['$scope', '$state', 'Recipes'];
+
+        constructor(
+            private $scope: ng.IScope,
+            private $state: angular.ui.IStateService,
+            private Recipes: Services.Recipes) {
+
+            this.recipes = this.Recipes.recipes;
+
+            this.jssorOptions = {
+                $AutoPlay: false,
+                $SlideDuration: 500
+            };
+
+            this.$scope.$on('JssorSliderChanged', (event, args) => {
+                this.recipeIndex = args.slideIndex;
+            });
+        }
+
+        addRecipeToWeeklyPlan(day: Model.WeeklyPlanDay) {
+            this.Recipes.addRecipeToWeeklyPlan(this.recipes[this.recipeIndex], day);
         }
     }
 }

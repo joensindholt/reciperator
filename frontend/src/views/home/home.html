@@ -1,5 +1,42 @@
 <div class="page-wrapper">
-    <h1>Home</h1>
-    <p>This is the home page</p>
-    <a ui-sref="ui-kit">UI Kit</a>
+
+    <div class="page-block">
+        <div class="grid-block">
+            <div class="grid-container">
+                <div class="slides-container" style="position: relative; top: 0px; left: 0px; width: 600px; height: 300px;">
+                    <!-- Slides Container -->
+                    <div u="slides" style="cursor: move; position: absolute; overflow: hidden; left: 0px; top: 0px; width: 600px; height: 300px;">
+                        <div ng-repeat='recipe in vm.recipes'
+                             enable-jssor jssor-options="vm.jssorOptions"
+                             jssor-trigger="{{$last}}">
+                            <img u="image" src="{{ recipe.imageUrl }}" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-block">
+        <div class="grid-block small-up-7">
+            <div class="grid-block" ng-repeat="day in vm.Recipes.weeklyPlan.days track by $index">
+                <div class="grid-content">
+                    <div ng-click="vm.addRecipeToWeeklyPlan(day)">Plus</div>
+                    <h6>{{day.shortDay}}</h6>
+                    <div>{{day.recipe.title}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-block">
+        <div ng-repeat="ingredient in vm.Recipes.weeklyPlan.ingredients track by $index">
+            <div>{{ingredient.title}} ({{ingredient.amount}} {{ingredient.unit}})</div>
+        </div>
+    </div>
+
+    <div class="page-block">
+        <a ui-sref="ui-kit">UI Kit</a>
+    </div>
+
 </div>
